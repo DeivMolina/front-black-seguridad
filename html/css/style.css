@@ -41,6 +41,12 @@ Footer
 
 ===========================*/
 /* Theme Default CSS */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 .text-primary {
   color: #ec2b32 !important; }
 
@@ -10507,27 +10513,47 @@ body.single-tribe_events .tribe-events-meta-group {
 
 /*# sourceMappingURL=style.css.map */
 
-.slider-area {
-  position: relative;
-  overflow: hidden;
+/* 1) El contenedor principal del slider debe ser el "contexto" */
+.slider-area.style-1 {
+  position: relative;        /* clave */
+  overflow: hidden;          /* evita barras si el video se sale */
 }
 
+/* 2) El video de fondo queda fijo detrás ocupando todo */
 .te-slider-video-bg {
-  position: absolute;
-  top: 1;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Asegura que el video esté detrás del contenido */
+  position: absolute;        /* saca del flujo: ya no empuja nada */
+  inset: 0;                  /* top/right/bottom/left = 0 */
+  z-index: 0;                /* detrás del contenido */
+  pointer-events: none;      /* que no bloquee clicks del slider */
 }
 
+/* El video se estira y recorta tipo cover */
 .te-slider-video-bg video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que el video cubra todo el fondo */
+  object-fit: cover;
+  display: block;
 }
 
-.te-slider-wrapper {
+/* 3) Overlay del 70% sobre el video */
+.te-slider-video-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  opacity: 0.7;              /* 70% */
+}
+
+/* 4) Todo el contenido del slider por encima del video+overlay */
+.te-slider-wrapper,
+.te-slider-label,
+.te-single-slider,
+.te-single-slider-wrapper {
   position: relative;
-  z-index: 1; /* Asegura que el contenido del slider esté sobre el video */
+  z-index: 1;                /* encima del fondo */
+}
+
+/* (Opcional) Si tu slider necesita altura mínima para que se vea el video */
+.slider-area.style-1 {
+  min-height: 600px;         /* ajusta según tu diseño */
 }

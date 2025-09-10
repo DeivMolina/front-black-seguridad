@@ -187,7 +187,7 @@
         $(".video-slider-wrapper").slick({
             slidesToShow: 3,
             infinite: true,
-            autoplay: false,
+            autoplay: true,
             draggable: true,
             arrows: true,
             loop: true,
@@ -213,7 +213,7 @@
         $(".portfolio-slider-wrapper").slick({
             slidesToShow: 5,
             infinite: true,
-            autoplay: false,
+            autoplay: true,
             draggable: true,
             arrows: false,
             loop: true,
@@ -269,7 +269,7 @@
         $(".te-slider-wrapper").slick({
             slidesToShow: 1,
             infinite: true,
-            autoplay: false,
+            autoplay: true,
             draggable: true,
             arrows: true,
             slidesToScroll: 1,

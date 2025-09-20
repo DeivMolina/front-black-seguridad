@@ -10639,4 +10639,8 @@ body.single-tribe_events .tribe-events-meta-group {
   height: auto;
 }
 
+.text-shadow{
+  text-shadow: 2px 2px 5px black;
+}
+
 

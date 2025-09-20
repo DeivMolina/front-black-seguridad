@@ -177,8 +177,20 @@
         $('.gallery-photo').magnificPopup({
             type: 'image',
             gallery: {
-                enabled: true
+                enabled: true,
+                tCounter: '%curr% de %total%' 
             },
+            fixedContentPos: true, 
+            callbacks: {
+                open: function() {
+                // Congela el scroll en la posición actual
+                $('html').css('overflow', 'hidden');
+                },
+                close: function() {
+                $('html').css('overflow', '');
+                }
+            },
+
         });
 
         /*
@@ -187,7 +199,7 @@
         $(".video-slider-wrapper").slick({
             slidesToShow: 3,
             infinite: true,
-            autoplay: true,
+            autoplay: false,
             draggable: true,
             arrows: true,
             loop: true,

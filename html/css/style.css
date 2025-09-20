@@ -137,7 +137,7 @@ p {
   margin: 0 0 15px; }
 
 img {
-  max-width: 100%;
+  max-width: auto;
   height: auto; }
 
 h1 a,
@@ -3495,7 +3495,7 @@ body.admin-bar .te-header-menu-area.te-sticky_menu {
           color: #ec2b32; }
 
 .te-body-overlay {
-  background-color: rgba(0, 0, 0, 0.6);
+  /* background-color: rgba(0, 0, 0, 0.6); */
   height: 100%;
   width: 100%;
   position: fixed;
@@ -3516,7 +3516,7 @@ body.admin-bar .te-header-menu-area.te-sticky_menu {
   overflow: hidden;
   position: relative; }
   .slider-area .te-slider-label {
-    font-size: 105px;
+    font-size: 50px;
     font-weight: 700;
     line-height: initial;
     position: absolute;
@@ -3681,7 +3681,7 @@ body.admin-bar .te-header-menu-area.te-sticky_menu {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      padding: 120px 0;
+      padding: 150px;
       gap: 30px; }
       @media only screen and (min-width: 0px) and (max-width: 767px) {
         .slider-area .te-single-slider .te-slider-container {
@@ -3719,14 +3719,16 @@ body.admin-bar .te-header-menu-area.te-sticky_menu {
         color: #ec2b32;
         display: inline-block;
         width: 100%;
-        margin-bottom: 15px; }
+        margin-bottom: 15px; 
+        text-shadow: 2px 2px 5px black;}
       .slider-area .te-single-slider .te-slider-content-wrapper .te-slider-content .te-slider-title {
         color: #ffffff;
         font-family: "Rajdhani", sans-serif;
         font-size: 97px;
         font-weight: 700;
         line-height: 88px;
-        margin-bottom: 30px; }
+        margin-bottom: 30px; 
+        text-shadow: 2px 2px 5px black;}
         @media only screen and (min-width: 0px) and (max-width: 767px) {
           .slider-area .te-single-slider .te-slider-content-wrapper .te-slider-content .te-slider-title br {
             display: none; } }
@@ -3958,7 +3960,8 @@ body.admin-bar .te-header-menu-area.te-sticky_menu {
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0; }
+    left: 0; 
+    padding: 0px 20px;}
     .video-slider-card .video-thumb img {
       -o-object-fit: cover;
          object-fit: cover;
@@ -8477,7 +8480,7 @@ ul.children {
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      /* height: 100%; */
       -o-object-fit: cover;
          object-fit: cover; }
 .te-post-comments-form.style-4 {
@@ -9437,10 +9440,18 @@ ul.children {
   .donate-feature-card .btn-wrapper {
     margin-top: 65px; }
 
-.feature-area.style-2 {
+/* .feature-area.style-2 {
   background-size: auto;
   background-position: bottom right;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat; } */
+
+  .feature-area.style-2 {
+  position: relative;
+  overflow: hidden; /* por si el ::before se extiende */
+  background-repeat: no-repeat; 
+  background-position: bottom right;
+}
+
 
 .brand-slider-area.style-1 {
   padding-top: 120px;
@@ -10540,8 +10551,8 @@ body.single-tribe_events .tribe-events-meta-group {
   content: "";
   position: absolute;
   inset: 0;
-  background: #000;
-  opacity: 0.7;              /* 70% */
+  /* background: #000;
+  opacity: 0.7;        */
 }
 
 /* 4) Todo el contenido del slider por encima del video+overlay */
@@ -10557,3 +10568,75 @@ body.single-tribe_events .tribe-events-meta-group {
 .slider-area.style-1 {
   min-height: 600px;         /* ajusta según tu diseño */
 }
+
+/* Imagen como fondo SOLO en desktop (≥992px) usando ::before */
+/* Quitar fondo en móviles y tablets (menor a 992px) */
+@media (max-width: 991.98px) {
+  .feature-area.style-2.te-py-120 {
+    background: none !important;
+    background-image: none !important;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .feature-area.style-2::before {
+    content: "";
+    position: absolute;
+    inset: 0;                 /* top/right/bottom/left: 0 */
+    background-image: url("images/img/estrategia-y-precision-analisis-de-riesgos-operadores-black-seguridad-privada-armada-mexico.webp");
+    background-repeat: no-repeat;
+    background-size: cover;   /* ajusta a tu gusto: contain/cover */
+    background-position: right center;
+    z-index: 0;
+  }
+
+  /* Asegura que el contenido quede por encima del fondo */
+  .feature-area.style-2 .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Oculta la versión <img> para desktop */
+  .feature-bg-mobile { display: none; }
+}
+
+/* Móvil/tablet (<992px): sin fondo detrás, muestra la imagen abajo */
+@media (max-width: 991.98px) {
+  .feature-area.style-2::before { display: none; }
+
+  .feature-bg-mobile {
+    display: block;
+    margin: 30px 0px;          /* espacio después de las tarjetas */
+  }
+
+  .feature-bg-mobile img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;         /* mantén proporción y llena el ancho */
+    border-radius: 8px;        /* opcional: suaviza esquinas */
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+.donate-feature-area .donate-image img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.footer .te-footer-logo img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+

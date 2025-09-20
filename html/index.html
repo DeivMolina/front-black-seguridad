@@ -43,6 +43,17 @@
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/style.css" />
 
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script> emailjs.init('5iopoYdLLqhHJ_3kG'); </script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -80,7 +91,7 @@
 </div>
 
 <!-- Preloader End !-->
-<!-- Header Start !-->
+<!-- Header !-->
 <header class="header-area style-3">
     <div class="header-top">
         <div class="container">
@@ -123,7 +134,7 @@
                                     <li><a href="#">INICIO</a></li>
                                     <li><a href="#servicios">SERVICIOS</a></li>
                                     <li><a href="#vacantes">VACANTES</a></li>
-                                    <li><a href="#">BLOG</a></li>
+                                    <!-- <li><a href="#">BLOG</a></li> -->
                                     <li><a href="#contacto">CONTACTO</a></li>
                                 </ul>
                             </nav>
@@ -177,8 +188,8 @@
 </div>
 <div class="te-body-overlay"></div>
 
-<!-- Slider Start -->
-<div class="slider-area style-1">
+<!-- Slider Start 2 columnas -->
+<!-- <div class="slider-area style-1">
     <div class="te-slider-video-bg">
         <video autoplay muted loop playsinline>
             <source src="images/black-seguridad-privada-armada-mexico.mp4" type="video/mp4">
@@ -282,15 +293,97 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Slider End -->
 
+<!-- Slider de 3 contenidos -->
+<div class="slider-area style-1">
+    <div class="te-slider-video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="images/black-seguridad-privada-armada-mexico.mp4" type="video/mp4">
+            <source src="images/black-seguridad-privada-armada-mexico.ogg" type="video/ogg">
+            Tu navegador no soporta video HTML5.
+        </video>
+    </div>
+    <h1 class="te-slider-label">Seguridad Corporativa</h1>
+    <div class="te-slider-wrapper">
+        <div class="te-single-slider-wrapper">
+            <div class="te-single-slider">
+                <div class="te-slider-overlay"></div>
+                <div class="container h-100">
+                    <div class="te-slider-container">
+                        <div class="te-slider-column">
+                            <div class="te-slider-content-wrapper">
+                                <div class="te-slider-content">
+                                    <span class="te-slider-short-title">Protección Estratégica</span>
+                                    <h1 class="te-slider-title">Seguridad de <span>alto nivel</span> para empresas y ejecutivos</h1>
+                                    <p class="te-slider-short-desc">
+                                        Garantizamos protección especializada con guardias armados altamente entrenados. Seguridad táctica para quienes exigen lo mejor.
+                                    </p>
+                                    <div class="te-slider-btn-wrapper">
+                                        <a href="#contacto" class="te-theme-btn">QUIERO PROTECCIÓN<i class="fa fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="te-single-slider-wrapper">
+            <div class="te-single-slider">
+                <div class="te-slider-overlay"></div>
+                <div class="container h-100">
+                    <div class="te-slider-container">
+                        <div class="te-slider-column">
+                            <div class="te-slider-content-wrapper">
+                                <div class="te-slider-content">
+                                    <span class="te-slider-short-title">Protección Ejecutiva</span>
+                                    <h1 class="te-slider-title">Seguridad Privada con <span>Entrenamiento</span> Militar</h1>
+                                    <p class="te-slider-short-desc">
+                                        Operativos diseñados para resguardar a personas de alto perfil. Seguridad sin concesiones, siempre un paso adelante.
+                                    </p>
+                                    <div class="te-slider-btn-wrapper">
+                                        <a href="#contacto" class="te-theme-btn">Solicitar Operativo<i class="fa fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="te-single-slider-wrapper">
+            <div class="te-single-slider">
+                <div class="te-slider-overlay"></div>
+                <div class="container h-100">
+                    <div class="te-slider-container">
+                        <div class="te-slider-column">
+                            <div class="te-slider-content-wrapper">
+                                <div class="te-slider-content">
+                                    <span class="te-slider-short-title">Resguardo Inteligente</span>
+                                    <h1 class="te-slider-title">Monitoreo y <span>Vigilancia</span> en Tiempo Real</h1>
+                                    <p class="te-slider-short-desc">
+                                        Centros de control, cámaras de seguridad y protocolos tácticos. Protección activa 24/7 con tecnología avanzada.
+                                    </p>
+                                    <div class="te-slider-btn-wrapper">
+                                        <a href="#contacto" class="te-theme-btn">Solicitar Monitoreo<i class="fa fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- Advantage  Start -->
-<div class="why-choose-area style-1 background-gray-700 te-py-120" id="servicios">
+<!-- Sobre nosotros -->
+<div class="why-choose-area style-1 background-gray-700 te-py-120" id="#">
     <div class="container">
         <div class="row gy-5">
             <div class="col-lg-5 wow fadeInLeft" data-wow-delay="100ms"
@@ -365,14 +458,14 @@
             </div>
         </div>
     </div>
-    <div class="why-choose-bg-area">
-        <img src="images/img/seguridad-sin-limites-proteccion-y-confianza-operadores-black-seguriddad-privada-especializada-mexico.webp" alt="image">
+    <div class="why-choose-bg-area ">
+        <img src="images/img/seguridad-sin-limites-proteccion-y-confianza-operadores-black-seguriddad-privada-especializada-mexico.webp" alt="image" class="hide-mobile">
     </div>
 </div>
-<!-- Advantage End -->
+<!-- Sobre nosotros End -->
 
-<!-- Slider services start !-->
-<div class="video-slider-area te-py-120" id="vacantes">
+<!-- Nuestros servicios start !-->
+<div class="video-slider-area te-py-120" id="servicios">
     <div class="container wow fadeInUp" data-wow-delay="100ms"
          data-wow-duration="1500ms">
         <div class="video-slider-wrapper">
@@ -404,7 +497,7 @@
                             </div>
                             <div class="video-content">
                                 <div class="video-content-inner">
-                                    <h3 class="title"><a href="#">Escoltas y Custodias </a></h3>
+                                    <h3 class="title"><a href="#"> Custodias </a></h3>
                                     <p class="short-desc">Seguridad personal y resguardo de mercancías de alto valor. </p>
                                 </div>
                             </div>
@@ -474,7 +567,7 @@
     </div>
 </div>
 
-<!-- Service Area Start !-->
+<!-- Especificación de nuestros servicios Start !-->
 <div class="service-area style-2 te-py-120">
     <div class="container">
         <div class="row gy-4">
@@ -509,7 +602,7 @@
                                 <h3 class="title"><a href="#">Protección Ejecutiva y Custodias</a></h3>
                             </div>
                             <div class="content">
-                                <p class="desc">Escoltas especializados para clientes de alto perfil y custodia de mercancías en tránsito.</p>
+                                <p class="desc">Protección especializada para clientes de alto perfil y custodia de mercancías en tránsito.</p>
                             </div>
                         </div>
                     </div>
@@ -550,9 +643,8 @@
         </div>
     </div>
 </div>
-<!-- Service Area End !-->
 
-<!-- CERTIFICATIONS AND ACCREDITATIONS Start -->
+<!-- Certificaciones Start -->
 <div class="brand-slider-area style-1 background-gray-700" style="padding-top: 60px; padding-bottom: 30px;">
     <div class="container p-sm-0">
 
@@ -563,7 +655,7 @@
                     <div class="te-section-content">
                         <h2 class="title"><span>CERTIFICACIONES</span> Y Acreditaciones Oficiales</h2>
                         <div class="short-title-wrapper">
-                            <span class="short-title">Solicite nuestros permisos. Contáctenos</span>
+                            <span class="short-title text-white">Solicite nuestros permisos. Contáctenos</span>
                         </div>
                     </div>
                 </div>
@@ -602,10 +694,16 @@
         </div>
     </div>
 </div>
-<!-- CERTIFICATIONS AND ACCREDITATIONS End -->
 
-<!-- Feature Area Start-->
+<!-- Estrategia-->
 <div class="feature-area style-2 te-py-120" style="background-image: url('images/img/estrategia-y-precision-analisis-de-riesgos-operadores-black-seguridad-privada-armada-mexico.webp')">
+    <div class="feature-bg-mobile" >
+        <img
+            src="images/img/estrategia-y-precision-analisis-de-riesgos-operadores-black-seguridad-privada-armada-mexico.webp"
+            alt="Estrategia y precisión - Black Seguridad Privada"
+            loading="lazy"
+        />
+    </div>
     <div class="container">
         <div class="row wow fadeInDown" data-wow-delay="100ms"
              data-wow-duration="1500ms">
@@ -706,11 +804,11 @@
             <!-- single te-info-card end-->
         </div>
     </div>
+    
 </div>
-<!-- Feature Area End !-->
 
-<!-- Will Be Start !-->
-<div class="donate-feature-area te-py-120">
+<!-- Vacantes !-->
+<div class="donate-feature-area te-py-120" id="vacantes">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -764,9 +862,8 @@
         </div>
     </div>
 </div>
-<!-- Will Be  End !-->
 
-<!-- Customers Start -->
+<!-- Formulario Contacto -->
 <div class="brand-slider-area style-1 background-gray-700" style="padding-top: 60px;">
     <div class="container p-sm-0">
 
@@ -849,47 +946,117 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="#" method="post" class="comment-form">
+                        <form class="comment-form" id="form" novalidate>
                             <div class="row gx-4">
                                 <div class="col-xl-6">
                                     <div class="te-contacts-email">
-                                        <input name="name" type="text" placeholder="Nombre*">
+                                        <input name="name" id="name" type="text" placeholder="Nombre*" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="te-contacts-email">
-                                        <input name="email" type="text" placeholder="Correo Electronico*">
+                                        <input name="email" id="email" type="text" placeholder="Correo Electronico*" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="te-contacts-name">
-                                        <input name="phone" type="text" placeholder="Telefono">
+                                        <input name="phone" id="phone" type="text" placeholder="Telefono" maxlength="10" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="te-contacts-name">
-                                        <input name="subject" type="text" placeholder="Tipo de servicio">
+                                        <input name="service" id="service" type="text" placeholder="Tipo de servicio" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="te-contacts-message">
-                                        <textarea name="comment" cols="20" rows="3" placeholder="Mensaje o solicitud"></textarea>
+                                        <textarea name="message" id="message" cols="20" rows="3" placeholder="Mensaje o solicitud" required></textarea>
                                     </div>
                                 </div>
+
+                                <div class="col-12" style="margin-bottom:12px;">
+                                    <div class="g-recaptcha" data-sitekey="6LeJzccrAAAAAHYxY9G9QTxSLanJVVgKH92mDxuZ"></div>
+                                </div>
+
                                 <div class="col-12">
-                                    <button class="te-theme-btn" type="submit">Enviar Mensaje</button>
+                                    <button class="te-theme-btn" id="button" value="Enviar Mensaje" type="submit">Enviar Mensaje</button>
                                 </div>
                             </div>
                         </form>
+
+
+                        <script>
+                        const form = document.getElementById('form');
+                        const btn  = document.getElementById('button');
+
+                        form.addEventListener('submit', async function (event) {
+                            event.preventDefault();
+
+                            // 1) Validación HTML5 de campos requeridos
+                            if (!form.checkValidity()) {
+                            form.reportValidity();
+                            return;
+                            }
+
+                            // 2) Validación reCAPTCHA v2 (checkbox)
+                            const recaptchaResponse = grecaptcha.getResponse();
+                            if (!recaptchaResponse) {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: 'Completa el reCAPTCHA',
+                                text: 'Por favor marca la casilla para continuar.',
+                                confirmButtonColor: '#ec2b32'
+                            });
+                            return;
+                            }
+
+                            // 3) Estado "Enviando..."
+                            const originalText = btn.textContent;
+                            btn.textContent = 'Enviando...';
+                            btn.disabled = true;
+
+                            const serviceID  = 'default_service';
+                            const templateID = 'template_zetm7a2'; // tu template en EmailJS
+
+                            try {
+                            await emailjs.sendForm(serviceID, templateID, form);
+
+                            // 4) Éxito
+                            await Swal.fire({
+                                icon: 'success',
+                                title: '¡Mensaje enviado!',
+                                text: 'Gracias. Pronto nos comunicaremos contigo.',
+                                confirmButtonColor: '#ec2b32'
+                            });
+
+                            form.reset();
+                            grecaptcha.reset(); // limpia el reCAPTCHA
+
+                            } catch (err) {
+                            // 5) Error
+                            console.error(err);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'No se pudo enviar',
+                                text: 'Inténtalo de nuevo en unos minutos.',
+                                confirmButtonColor: '#ec2b32'
+                            });
+                            } finally {
+                            // 6) Restaurar botón
+                            btn.disabled = false;
+                            btn.textContent = originalText;
+                            }
+                        });
+                        </script>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Customers End -->
 
-<!-- Testimonial Start -->
+<!-- Galeria -->
 <div class="portfolio-slider-area style-1 position-relative background-gray-700 te-pt-120 wow fadeInUp" style="background-image: url('images/section-bg/portfolio-bg.png'); padding-bottom: 0px;" data-wow-delay="600ms" data-wow-duration="1500ms" id="galeria">
     <div class="portfolio-slider-wrapper">
         <div class="slick-slide-item">
@@ -903,7 +1070,7 @@
                                 <span class="sub-title">Certificamos a nuestros agentes</span>
                             </div>
                             <div class="btn-wrapper">
-                                <a href="images/img/galeria-capacitacion-constante-seguridad-privada-armada-black.webp" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
+                                <a href="images/img/blackexterior alta -3.jpg" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -921,7 +1088,7 @@
                                 <span class="sub-title">Entrenamientos avalados por instituciones de gobierno</span>
                             </div>
                             <div class="btn-wrapper">
-                                <a href="images/img/galeria-capacitacion-y-entrenamiento-militar-operadores-de-seguridad-privada-blackwebp.webp" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
+                                <a href="images/img/blackexterior alta -5.jpg" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -939,7 +1106,7 @@
                                 <span class="sub-title">Posesión y uso de armas, entrenemientos agentes seguridad </span>
                             </div>
                             <div class="btn-wrapper">
-                                <a href="images/img/galeria-entrenamiento-certificado-para-operadores-armados-black.webp" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
+                                <a href="images/img/blackexterior alta -1.jpg" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -957,7 +1124,7 @@
                                 <span class="sub-title">Agentes capacitados para toda situación</span>
                             </div>
                             <div class="btn-wrapper">
-                                <a href="images/img/galeria-entrenamiento-tactico-especializado-seguridad-privada-armada-black.webp" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
+                                <a href="images/img/blackalta-17.jpg" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -975,7 +1142,7 @@
                                 <span class="sub-title">Operación Black Seguridad</span>
                             </div>
                             <div class="btn-wrapper">
-                                <a href="images/img/galeria-escoltas-unidades-black-mexico.webp" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
+                                <a href="images/img/blackexterior alta -57.jpg" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -993,7 +1160,7 @@
                                 <span class="sub-title">Habilitado y Monitoreado 24/7</span>
                             </div>
                             <div class="btn-wrapper">
-                                <a href="images/img/galeria-seguridad-y-monitoreo-operadores-black-mexico.webp" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
+                                <a href="images/img/blackalta-23.jpg" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1011,7 +1178,7 @@
                                 <span class="sub-title">Capacitación de operativos de seguridad </span>
                             </div>
                             <div class="btn-wrapper">
-                                <a href="images/img/entrenamientos-militares-capacitacion-de-operativos-de-seguridad-seguridad-privada-armada-black.webp" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
+                                <a href="images/img/blackexterior alta -47.jpg" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1029,7 +1196,7 @@
                                 <span class="sub-title">Seguridad de alto nivel con Black</span>
                             </div>
                             <div class="btn-wrapper">
-                                <a href="images/img/uniades-moviles-seguridad-black-de-alto-nivel.webp" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
+                                <a href="images/img/blackexterior alta -59.jpg" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1047,7 +1214,7 @@
                                 <span class="sub-title">Operativos de rescate y salvaguardia de efectivos</span>
                             </div>
                             <div class="btn-wrapper">
-                                <a href="images/img/operativos-e-recate-y-salvaguardia-de-efectivos-operadores-black-mexico.webp" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
+                                <a href="images/img/blackexterior alta -51.jpg" class="gallery-photo"><i class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1057,6 +1224,7 @@
     </div>
 </div>
 
+<!-- Footer -->
     <footer class="footer style-1 background-gray-700">
         <div class="te-footer-sec">
             <div class="container">
@@ -1070,7 +1238,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 te-footer-widget-wrapper">
+                    <div class="col-xl-3 col-lg-6 col-md-6 te-footer-widget-wrapper hide-mobile">
                         <div class="te-footer-widget te_widget_nav_menu">
                             <h3 class="te-footer-widget-title">SOBRE BLACK</h3>
                             <ul class="menu">
@@ -1082,7 +1250,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-6 col-md-6 te-footer-widget-wrapper">
+                    <div class="col-xl-3 col-lg-6 col-md-6 te-footer-widget-wrapper hide-mobile">
                         <div class="te-footer-widget te_widget_nav_menu">
                             <h3 class="te-footer-widget-title">NOTAS DE SEGURIDAD</h3>
                             <ul class="menu">
@@ -1163,6 +1331,7 @@
 			<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
 		</svg>
 	</div>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>

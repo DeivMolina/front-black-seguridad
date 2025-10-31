@@ -196,28 +196,30 @@
         /*
         Video Slider JS
         ============================*/
-        $(".video-slider-wrapper").slick({
-            slidesToShow: 3,
-            infinite: true,
-            autoplay: false,
-            draggable: true,
-            arrows: true,
-            loop: true,
-            dots: false,
-            centerMode: true,
-            speed: 1500,
-            prevArrow: "<span class='slider-arrow-btn prev-btn'><i class='fa-solid fa-angles-left'></i></span>",
-            nextArrow: "<span class='slider-arrow-btn next-btn'><i class='fa-solid fa-angles-right'></i></span>",
-            responsive: [
-                {
-                    breakpoint: 767,
+$(".video-slider-wrapper").slick({
+  slidesToShow: 3,
+  infinite: true,
+  autoplay: true,
+  draggable: true,
+  arrows: true,
+  dots: false,
+  centerMode: true,
+  speed: 1500,
+  pauseOnHover: false,
+  pauseOnFocus: false,
+  accessibility: false, // evita focus/tabindex automáticos
+  waitForAnimate: true, // no dispara otro cambio hasta terminar la animación
+  prevArrow: "<span class='slider-arrow-btn prev-btn'><i class='fa-solid fa-angles-left'></i></span>",
+  nextArrow: "<span class='slider-arrow-btn next-btn'><i class='fa-solid fa-angles-right'></i></span>",
+  responsive: [{ breakpoint: 767, settings: { slidesToShow: 1 } }],
+});
 
-                    settings: {
-                        slidesToShow: 1,
-                    },
-                },
-            ],
-        });
+// Por si algún <a> queda enfocado durante el cambio
+$(".video-slider-wrapper").on("beforeChange", function(){
+  if (document.activeElement) document.activeElement.blur();
+});
+
+
 
         /*
         Portfolio Slider JS

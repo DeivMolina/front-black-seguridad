@@ -46,6 +46,18 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Evita cambio de ancho al aparecer/desaparecer la barra de scroll */
+:root { scrollbar-gutter: stable both-edges; }
+
+/* Lock de scroll cuando el modal está abierto */
+html.lock-scroll,
+body.lock-scroll {
+  overflow: hidden;
+  /* Para iOS se siente mejor así */
+  overscroll-behavior: none;
+}
+
+
 
 .text-primary {
   color: #ec2b32 !important; }
@@ -4093,7 +4105,7 @@ body.admin-bar .te-header-menu-area.te-sticky_menu {
     .client-logo-wrapper .client-logo img {
       -webkit-transition: all 0.5s ease-out;
       transition: all 0.5s ease-out;
-      opacity: 0.3; }
+      opacity: 0.8; }
     .client-logo-wrapper .client-logo:hover {
       -webkit-transform: scale(1.03);
               transform: scale(1.03); }
@@ -10642,5 +10654,77 @@ body.single-tribe_events .tribe-events-meta-group {
 .text-shadow{
   text-shadow: 2px 2px 5px black;
 }
+
+.fs-20{
+  font-size: 20px;
+}
+
+.fs-25{
+  font-size: 25px;
+  line-height: 32px;
+}
+
+.p-10{
+  padding: 10px;
+}
+
+ .tabla-doc {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+  .tabla-doc thead th {
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    padding: 8px 10px;
+    border: 1px solid #000;
+    text-align: left; /* encabezados a la derecha */
+  }
+  .tabla-doc td {
+    border: 1px solid #000;
+    padding: 8px 10px;
+    vertical-align: top;
+    text-align: left; /* celdas a la derecha */
+  }
+
+  .w-resp { width: 60%; }
+  .w-auto { width: 40%; }
+
+  /* Estado base: contenido apagado en todos los slides */
+.video-slider-wrapper .video-content {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none; /* sin interacción cuando no está centrado */
+}
+
+/* ÚNICO estado encendido: solo el slide centrado */
+.video-slider-wrapper .slick-center .video-content,
+.video-slider-wrapper .slick-current.slick-center .video-content {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* Blindaje: aunque el slide esté .slick-active, si NO es centrado => apagado */
+.video-slider-wrapper .slick-active:not(.slick-center) .video-content {
+  opacity: 0 !important;
+  transform: translateY(6px) !important;
+  pointer-events: none !important;
+}
+
+/* Opcional: evita subrayados/contornos al enfocar enlaces del slider */
+.video-slider-wrapper .video-content .title a,
+.video-slider-wrapper .video-content .title a:hover,
+.video-slider-wrapper .video-content .title a:focus,
+.video-slider-wrapper .video-content .title a:focus-visible,
+.video-slider-wrapper .video-content .title a:active {
+  text-decoration: none !important;
+  outline: none;
+}
+
 
 

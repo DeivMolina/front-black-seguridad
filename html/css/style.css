@@ -4086,8 +4086,35 @@ body.admin-bar .te-header-menu-area.te-sticky_menu {
       .video-slider-wrapper .slider-arrow-btn.next-btn {
         right: 0px !important; } }
 
+        /* Cada slide tiene un contenedor del mismo alto */
 .client-logo-wrapper {
-  padding: 10px 0; }
+    height: 160px;             /* ajusta según tu diseño */
+    display: flex;
+    align-items: center;       /* centra vertical */
+    justify-content: center;   /* centra horizontal */
+}
+
+/* El div del logo también usa flex para asegurar centrado */
+.client-logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* El logo se ajusta sin deformarse y queda centrado */
+.client-logo img {
+    max-width: 80%;  
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+
+.client-logo-wrapper {
+  padding: 10px 0; 
+}
   .client-logo-wrapper .client-logo {
     display: -webkit-box;
     display: -ms-flexbox;

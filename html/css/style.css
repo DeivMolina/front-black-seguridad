@@ -4088,7 +4088,7 @@ body.admin-bar .te-header-menu-area.te-sticky_menu {
 
         /* Cada slide tiene un contenedor del mismo alto */
 .client-logo-wrapper {
-    height: 160px;             /* ajusta según tu diseño */
+    height: 250px;             /* ajusta según tu diseño */
     display: flex;
     align-items: center;       /* centra vertical */
     justify-content: center;   /* centra horizontal */
@@ -4105,7 +4105,7 @@ body.admin-bar .te-header-menu-area.te-sticky_menu {
 
 /* El logo se ajusta sin deformarse y queda centrado */
 .client-logo img {
-    max-width: 80%;  
+    max-width: 85%;  
     width: auto;
     height: auto;
     display: block;

@@ -131,9 +131,10 @@
                         <div class="te-menu d-inline-block">
                             <nav id="main-menu" class="te-main-menu">
                                 <ul>
-                                    <li><a href="index.html">INICIO</a></li>
-                                    <li><a href="index.html#servicios">SERVICIOS</a></li>
-                                    <li><a href="index.html#vacantes">VACANTES</a></li>
+                                    <li><a href="https://blackseguridad.com/">INICIO</a></li>
+                                    <li><a href="https://blackseguridad.com/servicios">SERVICIOS</a></li>
+                                    <li><a href="https://blackseguridad.com/vacantes">VACANTES</a></li>
+                                    <li><a href="https://blackseguridad.com/#contrata">Contrata</a></li>
                                     <li><a href="legales.html">Legales</a></li>
                                     <li><a href="contacto.html">CONTACTO</a></li>
                                 </ul>
@@ -242,41 +243,390 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="#" method="post" class="comment-form">
+                        <form class="comment-form" id="form">
                             <div class="row gx-4">
                                 <div class="col-xl-6">
                                     <div class="te-contacts-email">
-                                        <input name="name" type="text" placeholder="Nombre*" required>
+                                        <input name="form-name" id="form-name" type="text" value="Contacto" class="d-none" >
+                                        <input name="name" id="name" type="text" placeholder="Nombre*" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="te-contacts-email">
-                                        <input name="email" type="text" placeholder="Correo Electrónico*" required>
+                                        <input name="email" id="email" type="text" placeholder="Correo Electrónico*" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="te-contacts-name">
-                                        <input name="phone" type="text" placeholder="Teléfono">
+                                        <input name="phone" id="phone" type="text" placeholder="Teléfono">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="te-contacts-name">
-                                        <input name="subject" type="text" placeholder="Asunto*" required>
+                                        <input name="service" id="service" type="text" placeholder="Asunto*" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="te-contacts-message">
-                                        <textarea name="comment" cols="20" rows="3" placeholder="Mensaje o solicitud*" required></textarea>
+                                        <textarea name="message" id="message" cols="20" rows="3" placeholder="Mensaje o solicitud*" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-xl-6" style="margin-bottom:12px;">
                                     <div class="g-recaptcha" data-sitekey="6LeJzccrAAAAAHYxY9G9QTxSLanJVVgKH92mDxuZ"></div>
                                 </div>
+
+                                <!-- PRIVACIDAD (checkbox + enlace que abre modal) -->
+                                <div class="col-xl-6" style="margin-bottom:12px;">
+                                    <div class="form-check" style="display:flex; align-items:flex-start; gap:.5rem;">
+                                        <input class="form-check-input" type="checkbox" id="privacy_accept" name="privacy_accept" required>
+                                        <label class="form-check-label" for="privacy_accept" style="line-height:1.4; margin-bottom: 0px;">
+                                        He leído y acepto el
+                                        <button type="button" id="openPrivacyModal" class="te-link-btn">Aviso de Privacidad</button>
+                                        <style>
+                                        .te-link-btn{ background:none;border:0;padding:0;margin:0;text-decoration:underline;cursor:pointer;color:inherit; }
+                                        </style>
+
+                                        </label>
+                                    </div>
+                                    <small style="display:block; margin-top:6px; opacity:.8;">
+                                        Para enviar el formulario es obligatorio aceptar el Aviso de Privacidad.
+                                    </small>
+                                </div>
                                 <div class="col-12">
-                                    <button class="te-theme-btn" type="submit">Enviar Mensaje</button>
+                                    <button class="te-theme-btn" id="button" type="submit">Enviar Mensaje</button>
                                 </div>
                             </div>
                         </form>
+
+                        <!-- ===== Modal Aviso de Privacidad ===== -->
+                        <div id="privacyModal" class="te-modal" aria-hidden="true" role="dialog" aria-labelledby="privacyTitle" aria-modal="true">
+                            <div class="te-modal__backdrop" data-close-modal></div>
+                                <div class="te-modal__dialog" role="document" tabindex="-1">
+                                    <div class="te-modal__header">
+                                        <h3 id="privacyTitle" class="te-modal__title">RH-PSA-7-F1 Aviso de Privacidad V01</h3>
+                                        <button type="button" class="te-modal__close" aria-label="Cerrar" title="Cerrar" data-close-modal>&times;</button>
+                                    </div>
+                                    <div class="te-modal__body">
+                                        <div>
+                                            <p>En BLACK OPERADORES DE SEGURIDAD PRIVADA S.A. DE C.V. sabemos de la necesidad e importancia que implica proteger los datos de nuestro personal y visitantes, es por ello que aplicamos lineamientos, políticas, procedimientos y programas de privacidad para proteger la información que sea recabada.<br><br>
+                                            Como cliente o empleado de BLACK OPERADORES DE SEGURIDAD PRIVADA S.A. DE C.V. usted tiene la seguridad de que sus datos personales y empresariales estarán protegidos adecuadamente. La seguridad de su información como parte de nuestro objeto social, es nuestro principal objetivo; por ello la protegemos mediante el uso exclusivo con la finalidad para la cual fue recabada y el mantenimiento y resguardo de la información, a fin de impedir que terceros no autorizados accedan a la misma.<br><br>
+                                            Como es de su conocimiento el pasado 5 de julio de 2010 se publicó en el Diario Oficial de la Federación la Ley Federal de Protección de Datos Personales en Posesión de Particulares (en lo sucesivo la “Ley”) cuyas disposiciones claramente coinciden con nuestro objetivo de proteger sus datos personales. Para su mayor comodidad el contenido de la Ley puede ser consultado a través de los portales que el Gobierno Federal, por conducto de la Secretaría de Gobernación, y la Cámara de Diputados del H. Congreso de la Unión tienen en Internet y cuyas direcciones son: http://www.ordenjuridico.gob.mx y http://www.diputados.gob.mx.<br><br>
+                                            Por lo anteriormente mencionado, en cumplimiento a nuestro Programa de Privacidad y con fundamento en lo dispuesto por la Norma aplicable; se hace de su conocimiento que los datos personales y empresariales que se obtengan por parte de BLACK OPERADORES DE SEGURIDAD PRIVADA S.A. DE C.V. serán tratados de manera confidencial a través de los sistemas y esquemas provistos para tales efectos.<br><br>
+                                            Responsables del tratamiento de sus datos personales:<br><br>
+                                            En este tenor se menciona que el responsable del tratamiento de sus datos personales será BLACK OPERADORES DE SEGURIDAD PRIVADA S.A. DE C.V. por conducto del Área de Recursos Humanos entre otras áreas que por su contacto deban tener acceso a dicha información.<br><br>
+                                            En cumplimiento a lo establecido en la Ley antes referida y para efectos del presente aviso de privacidad. señala como su domicilio comercial el ubicado en la calle Presa Valsequillo 24, Col. Irrigación, Alcaldía Miguel Hidalgo, C.P. 11500, Ciudad de México.<br><br>
+                                            Datos personales y empresariales que pueden recabarse:<br><br>
+                                            Queda entendido entre las partes que BLACK OPERADORES DE SEGURIDAD PRIVADA S.A. DE C.V. podrá recabar los datos personales y empresariales necesarios para atender cuestiones que deban ser inherentes a la prestación de los servicios contratados y la relación comercial establecida; formalizar la contratación de nuestros servicios para el caso de ser prospecto a cliente; y para la adquisición o prestación de cualquier tipo de producto o servicio que se produzca para el caso de ser proveedor; al momento de aplicar a una vacante e iniciar el proceso de reclutamiento. De este modo de manera enunciativa, más no limitativa, BLACK OPERADORES DE SEGURIDAD PRIVADA S.A. DE C.V. podrá recabar su nombre; domicilio; fecha de nacimiento; país y entidad de nacimiento; nacionalidad; ocupación, profesión, actividad o giro del negocio al que se dedique, actas constitutivas, poderes, domicilio fiscal, convencional; números telefónicos fijos o celulares; correos electrónicos, Clave Única de Registro de Población (CURP); Clave del Registro Federal de Contribuyentes e información financiera relacionada con la capacidad financiera para ser proveedor o cliente de BLACK OPERADORES DE SEGURIDAD PRIVADA S.A. DE C.V.<br>
+                                            Finalidades del tratamiento de sus datos personales:<br>
+                                            Los datos personales y empresariales que recabe serán usados para la formalización del contrato de prestación de servicios para el caso de ser cliente de y la formalización de la compra, adquisición, operación y registro de los productos o servicios que el proveedor venda, produzca o comercialice en favor de BLACK OPERADORES DE SEGURIDAD PRIVADA S.A. DE C.V. Los datos personales que se recaben con fines de reclutamiento al momento de aplicar para una vacante laboral.<br><br>
+                                            Transferencia de datos personales:<br><br>
+                                            BLACK OPERADORES DE SEGURIDAD PRIVADA S.A. DE C.V. podrá transferir únicamente sus datos personales y empresariales a las autoridades competentes que así lo requieran y con motivo de sus atribuciones y de conformidad con el objeto social.<br><br>
+                                            Revocación del consentimiento:<br><br>
+                                            Usted podrá revocar su consentimiento, así como oponerse para el tratamiento de sus datos personales y empresariales para las finalidades que no son indispensables para la relación jurídica que dio origen a la contratación como empleado, cliente o prestador de servicios.<br><br>
+                                            Derechos ARCO:<br><br>
+                                            Usted o su representante legal debidamente acreditado podrán limitar el uso o divulgación de sus datos personales y empresariales; así como ejercer, cuando procedan, los derechos de Acceso, Rectificación, Cancelación u Oposición que la Ley prevé. Es importante mencionar que el ejercicio de cualquiera de dichos derechos no es requisito previo ni impide el ejercicio de otro derecho. <br><br>
+                                            Usted tiene el derecho de acceder a los Datos Personales que poseemos de usted y al detalle del tratamiento de los mismos; a ratificarlos en caso de ser inexactos o incompletos; a cancelarlos cuando considere que no se requieren para alguna de las finalidades señaladas en el presente AVISO DE PRIVACIDAD, estén siendo utilizados para actividades no consentidas, o haya finalizado la relación contractual o de servicio, y a oponerse del tratamiento de las mismos los mecanismos implementados para el ejercicio de los derechos ARCO  en los términos que marca la ley en su artículo 29, a través del envió de un a solicitud al correo juridico@blackoperadores.com, los siguientes derechos:  acceso, ratificación, cancelación u oposición deberá contener y acompañar lo siguiente: (i) nombre del titular, domicilio, cuenta de correo u otro medio para comunicarle la respuesta de su solicitud, (ii) documento que acredite su identidad, (iii) la descripción clara y precisa de los datos personales respecto de los que busca ejercer algún derecho de los antes mencionados, y (iv) cualquier otro documento que facilite la localización de los datos personales. En un plazo máximo de 20 días hábiles atenderemos su petición.<br><br>
+                                            Así también, le informamos que usted tiene derecho a iniciar un Procedimiento de Protección de Datos ante el Instituto Federal de Acceso a la Información y Protección de Datos (www.ifai.gob.mx) a partir de que concluya el plazo de 20 días contados a partir de la fecha de recepción de su solicitud de ejercicio de derechos.<br><br>
+                                            Modificaciones al aviso de privacidad:<br><br>
+                                            Cualquier modificación al presente aviso le será notificada a través de cualquiera de los siguientes medios: un comunicado por escrito enviado a su domicilio; a través de la página web, un mensaje enviado a su correo electrónico o bien, a través de mensajes publicados en periódicos de amplia circulación.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="te-modal__footer">
+                                        <button type="button" class="te-theme-btn" data-close-modal>Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ===== Estilos básicos del modal (no requiere Bootstrap) ===== -->
+                        <style>
+                        /* === Contenedor del modal: centrado en ambas direcciones === */
+                        .te-modal{
+                            position: fixed;
+                            inset: 0;
+                            z-index: 9999;
+                            display: none;                /* oculto por defecto */
+                            /* Centro perfecto: */
+                            display: none;
+                        }
+                        .te-modal.is-open{
+                            display: flex;                /* activar flex al abrir */
+                            align-items: center;          /* centra vertical */
+                            justify-content: center;      /* centra horizontal */
+                        }
+
+                        /* Fondo */
+                        .te-modal__backdrop{
+                            position: absolute;
+                            inset: 0;
+                            background: rgba(0,0,0,.5);
+                        }
+
+                        /* === Diálogo: más largo y con altura controlada === */
+                        .te-modal__dialog{
+                            position: relative;
+                            z-index: 1;
+                            /* ancho “largo”: ajusta a tu gusto */
+                            max-width: 1000px;            /* antes 800px */
+                            width: calc(100% - 2rem);
+                            /* alto máximo para que quepa en pantalla y tenga scroll propio */
+                            max-height: calc(100vh - 4rem);
+                            background: #000;
+                            border-radius: 12px;
+                            overflow: hidden;             /* header/footer fijos, body scrollea */
+                            box-shadow: 0 10px 40px rgba(0,0,0,.2);
+                            display: flex;
+                            flex-direction: column;       /* header, body, footer en columna */
+                        }
+
+                        /* Header y footer */
+                        .te-modal__header,
+                        .te-modal__footer{
+                            padding: 16px 20px;
+                            background: #000;
+                            flex: 0 0 auto;               /* no crecen, no scrollean */
+                        }
+
+                        /* === Header: título a la izq, “X” a la der === */
+                        .te-modal__header{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;   /* <-- lo que pediste */
+                            gap: 12px;
+                        }
+
+                        .te-modal__title{
+                            margin: 0;
+                            font-size: 20px;
+                            font-weight: 700;
+                        }
+
+                        .te-modal__close{
+                            border: none;
+                            background: transparent;
+                            font-size: 28px;
+                            line-height: 1;
+                            cursor: pointer;
+                        }
+
+                        /* === Body: scroll propio del contenido === */
+                        .te-modal__body{
+                            padding: 20px;
+                            overflow: auto;                   /* <-- su propio scroll */
+                            -webkit-overflow-scrolling: touch;/* scroll suave en iOS */
+                            line-height: 1.6;
+                            flex: 1 1 auto;                   /* ocupa el espacio disponible */
+                        }
+
+                        .te-link-btn{
+                        background: none;
+                        border: 0;
+                        padding: 0;
+                        margin: 0;
+                        text-decoration: underline;
+                        color: inherit;
+                        cursor: pointer;
+                        }
+
+
+
+
+                        @media (max-width: 575.98px){
+                            .te-modal__dialog{
+                            width: calc(100% - 1rem);
+                            max-height: calc(100vh - 2rem);
+                            border-radius: 10px;
+                            }
+                        }
+                        </style>
+
+                        <!-- ===== JS del modal ===== -->
+                        <script>
+                        (function () {
+                        const modal  = document.getElementById('privacyModal');
+                        const dialog = modal?.querySelector('.te-modal__dialog');
+                        const openBtn = document.getElementById('openPrivacyModal');
+
+                        let savedScrollY = 0;
+                        let savedScrollBehavior = '';
+                        let prevScrollRestoration = (history.scrollRestoration || 'auto');
+                        let appliedPaddingRight = ''; // para revertir
+
+                        // calcula el ancho de la barra de scroll (0 si no hay)
+                        function getScrollbarWidth() {
+                            return window.innerWidth - document.documentElement.clientWidth;
+                        }
+
+                        function lockBody() {
+                            // 1) guardar posición y ajustes de scroll
+                            savedScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+                            savedScrollBehavior = document.documentElement.style.scrollBehavior || '';
+                            document.documentElement.style.scrollBehavior = 'auto';
+                            try { history.scrollRestoration = 'manual'; } catch(_) {}
+
+                            // 2) compensar desaparición de la scrollbar (evita “salto” de layout)
+                            const sbw = getScrollbarWidth();
+                            if (sbw > 0) {
+                            // aplica padding-right solo si realmente hay scrollbar
+                            appliedPaddingRight = String(sbw) + 'px';
+                            document.body.style.paddingRight = appliedPaddingRight;
+                            // si tienes cabecera fija, compénsala también aquí (opcional):
+                            // const header = document.querySelector('.header-fija');
+                            // if (header) header.style.paddingRight = appliedPaddingRight;
+                            } else {
+                            appliedPaddingRight = '';
+                            }
+
+                            // 3) fijar body sin remaquetar
+                            document.body.style.position = 'fixed';
+                            document.body.style.top = `-${savedScrollY}px`;
+                            document.body.style.left = '0';
+                            document.body.style.right = '0';
+                            document.body.style.width = '100%';
+                            document.body.style.overflow = 'hidden';
+                        }
+
+                        function unlockBody() {
+                            // lee el desplazamiento guardado antes de limpiar estilos
+                            const y = -parseFloat(document.body.style.top || '0') || 0;
+
+                            // limpia estilos de lock en el siguiente frame para evitar parpadeo
+                            requestAnimationFrame(() => {
+                            document.body.style.position = '';
+                            document.body.style.top = '';
+                            document.body.style.left = '';
+                            document.body.style.right = '';
+                            document.body.style.width = '';
+                            document.body.style.overflow = '';
+
+                            // quita compensación de scrollbar en el mismo frame
+                            if (appliedPaddingRight) {
+                                document.body.style.paddingRight = '';
+                                // si compensaste una cabecera fija, revierte aquí también
+                                // const header = document.querySelector('.header-fija');
+                                // if (header) header.style.paddingRight = '';
+                            }
+
+                            // restaura scroll exacto SIN animación en el frame siguiente
+                            requestAnimationFrame(() => {
+                                window.scrollTo(0, y);
+                                // restaura comportamientos
+                                document.documentElement.style.scrollBehavior = savedScrollBehavior || '';
+                                try { history.scrollRestoration = prevScrollRestoration; } catch(_) {}
+                            });
+                            });
+                        }
+
+                        function openModal(e) {
+                            if (e) e.preventDefault();
+                            lockBody();
+                            modal.classList.add('is-open');
+                            modal.setAttribute('aria-hidden', 'false');
+                            if (dialog) {
+                            try { dialog.focus({ preventScroll: true }); } catch(_) {}
+                            }
+                        }
+
+                        function closeModal() {
+                            modal.classList.remove('is-open');
+                            modal.setAttribute('aria-hidden', 'true');
+                            if (document.activeElement) { try { document.activeElement.blur(); } catch(_) {} }
+                            unlockBody();
+                        }
+
+                        // abrir
+                        if (openBtn) openBtn.addEventListener('click', openModal);
+
+                        // cerrar por backdrop/botón
+                        modal?.addEventListener('click', (e) => {
+                            if (e.target.matches('[data-close-modal]') || e.target === modal) closeModal();
+                        });
+                        })();
+                        </script>
+
+                        <script>
+                        const form = document.getElementById('form');
+                        const btn  = document.getElementById('button');
+
+                        form.addEventListener('submit', async function (event) {
+                        event.preventDefault();
+
+                        // 1) Validación HTML5 de campos requeridos
+                        if (!form.checkValidity()) {
+                            form.reportValidity();
+                            return;
+                        }
+
+                         // 1.0) Privacidad (OBLIGATORIO)
+                        const privacyAccept = document.getElementById('privacy_accept');
+                        if (!privacyAccept.checked) {
+                            Swal.fire({
+                            icon: 'warning',
+                            title: 'Debes aceptar el Aviso de Privacidad',
+                            text: 'Marca la casilla para continuar.',
+                            confirmButtonColor: '#ec2b32'
+                            });
+                            return;
+                        }
+
+                        
+
+                        // 1.2) Llenar el campo oculto que verá EmailJS (mismo "name" que tu template)
+                        const hiddenService = document.getElementById('service_hidden');
+
+                        // 2) Validación reCAPTCHA v2 (checkbox)
+                        const recaptchaResponse = grecaptcha.getResponse();
+                        if (!recaptchaResponse) {
+                            Swal.fire({
+                            icon: 'warning',
+                            title: 'Completa el reCAPTCHA',
+                            text: 'Por favor marca la casilla para continuar.',
+                            confirmButtonColor: '#ec2b32'
+                            });
+                            return;
+                        }
+
+                        // 3) Estado "Enviando..."
+                        const originalText = btn.textContent;
+                        btn.textContent = 'Enviando...';
+                        btn.disabled = true;
+
+                        const serviceID  = 'default_service';
+                        const templateID = 'template_zetm7a2'; // tu template en EmailJS
+
+                        try {
+                            await emailjs.sendForm(serviceID, templateID, form);
+
+                            // 4) Éxito
+                            await Swal.fire({
+                            icon: 'success',
+                            title: '¡Mensaje enviado!',
+                            text: 'Gracias. Pronto nos comunicaremos contigo.',
+                            confirmButtonColor: '#ec2b32'
+                            });
+
+                            form.reset();
+                            grecaptcha.reset(); // limpia el reCAPTCHA
+
+                        } catch (err) {
+                            // 5) Error
+                            console.error(err);
+                            Swal.fire({
+                            icon: 'error',
+                            title: 'No se pudo enviar',
+                            text: 'Inténtalo de nuevo en unos minutos.',
+                            confirmButtonColor: '#ec2b32'
+                            });
+                        } finally {
+                            // 6) Restaurar botón
+                            btn.disabled = false;
+                            btn.textContent = originalText;
+                        }
+                        });
+                        </script>
+                        
+                        </div>
+
                     </div>
                 </div>
             </div>

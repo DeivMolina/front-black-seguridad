@@ -10754,4 +10754,52 @@ body.single-tribe_events .tribe-events-meta-group {
 }
 
 
+.contact-reportes {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
 
+.contact-reportes .te-map-widget {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    z-index: 1;
+}
+
+.contact-reportes .te-map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Para que el formulario quede encima y no se mezcle con la imagen */
+.contact-reportes .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Opcional: fondo del formulario */
+.contact-reportes .te-post-comments-form {
+    background: #111;
+   
+}
+
+@media (max-width: 991px) {
+    .contact-reportes {
+        padding-top: 0;
+    }
+
+    .contact-reportes .te-map-widget {
+        position: relative;
+        width: 100%;
+        height: 320px;
+    }
+
+    .contact-reportes .te-post-comments-form {
+        padding: 40px 20px;
+    }
+}
